@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<script
+ src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+</head>
+<body>
+  <button id="changeA"> Change Image A! </button>
+  <button id="changeB"> Change Image B! </button>
+  <p id="changeText"></p><p id="imgArea"><img id="mainImg" src="./images/a.jpg"></p>
+<!-- changeBが押されたらb.jpgに変更する -->
+<script type='text/javascript'>
+  $("button#changeB").click(function(){
+    //changeBが押された事を表示
+    $("p#changeText").text("Change Image B!");
+    //imgのsrcの変更
+    $("img#mainImg").attr("src","./images/b.jpg");
+  });
+  $("button#changeA").click(function(){
+    //changeAが押された事を表示
+    $("p#changeText").text("Change Image A!");
+    //imgのsrcの変更
+    $("img#mainImg").attr("src","./images/a.jpg");
+  });
+</script>
+</body>
+</html>

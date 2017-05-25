@@ -1,0 +1,74 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<!--jQueryì«Ç›çûÇ› -->
+<script
+ src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- CSSíËã` -->
+<style type="text/css">
+  .listTitle{
+     background-color: #000000;
+     color: #ffffff;
+     font-weight: bold;
+  }
+  h2.listTitle{
+    display: block;
+  }
+  li.child{
+    font-size: 24px;
+    list-style-type:none;
+    color: #000000;
+  }
+  ul.parent,childs{
+    font-size: 24px;
+    list-style-type:none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    color: #000000;
+  }
+  a.listItem{
+    text-decoration: none;
+    color: #000000;
+  }
+  ul.childs{
+    display:none;
+  }
+  
+</style>
+</head>
+<body>
+  <h2 class="listTitle">ê‹ÇËÇΩÇΩÇ›éÆÉäÉXÉg</h2>
+  <ul class="parent" id="list">
+    <li class="child"><a class="listItem" href="javascript:void(0)" id="listA">&#x2295;</a>listA</li>
+    <ul class="childs" id="child">
+      <li class="child"><a class="listItem" href="javascript:void(0)" id="childA">&#x2295;</a>childA</li>
+      <ul class="childs" id="grandoson">
+        <li class="child">&#x2766;GrandsonA1</li>
+        <li class="child">&#x2766;GrandsonA2</li>
+      </ul>
+    </ul>
+  </ul>
+  <ul class="parent" id="list">
+    <li class="child"><a class="listItem" href="javascript:void(0)" id="listB">&#x2295;</a>listB</li>
+    <ul class="childs" id="child">
+      <li class="child"><a class="listItem" href="javascript:void(0)" id="childB">&#x2295;</a>childB</li>
+      <ul class="childs" id="grandoson">
+        <li class="child">&#x2766;GrandsonB1</li>
+        <li class="child">&#x2766;GrandsonB2</li>
+      </ul>
+    </ul>
+  </ul>
+  
+  <script type="text/javascript">
+    $("a.listItem").click(function(){
+      if($(this).closest("ul").children("ul").css("display")=="none"){
+        this.innerHTML="&#x2296;";
+        $(this).closest("ul").children("ul").css("display","block");
+      }else{
+        this.innerHTML="&#x2295;";
+        $(this).closest("ul").children("ul").css("display","none");
+      }
+    });
+  </script>
+  </body>
+</html>
